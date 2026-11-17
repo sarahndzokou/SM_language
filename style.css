@@ -1,0 +1,493 @@
+
+/* =====================================
+   1. CONFIGURATION GENERALE
+===================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #142B50;
+    --secondary: #2878C8;
+    --accent: #56A8E8;
+    --background: #F4F7FC;
+    --white: #FFFFFF;
+    --text: #263449;
+    --muted: #68778B;
+    --border: #E1E8F0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--background);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* =====================================
+   2. EN-TETE ET NAVIGATION
+===================================== */
+
+.header {
+    width: 100%;
+    min-height: 100px;
+    padding: 15px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    background-color: var(--white);
+    box-shadow: 0 3px 15px rgba(20, 43, 80, 0.06);
+}
+
+.logo a {
+    display: inline-block;
+}
+
+.logo h1 {
+    color: var(--primary);
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.logo h1 span {
+    color: var(--secondary);
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.menu ul {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    list-style: none;
+}
+
+.menu a {
+    color: var(--primary);
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+.menu a:hover {
+    color: var(--secondary);
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: background-color 0.3s ease,
+                transform 0.3s ease;
+}
+
+.btn:focus-visible,
+.menu a:focus-visible,
+.footer a:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 4px;
+}
+
+.btn-signin {
+    padding: 11px 25px;
+    background-color: var(--primary);
+    color: var(--white);
+    font-size: 0.95rem;
+}
+
+.btn-signin:hover {
+    background-color: var(--secondary);
+    transform: translateY(-2px);
+}
+
+
+/* =====================================
+   3. SECTION DES LANGUES
+===================================== */
+
+.languages {
+    width: 100%;
+    min-height: 650px;
+    padding: 75px 7%;
+}
+
+.section-heading {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 50px;
+}
+
+.subtitle {
+    color: var(--secondary);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.section-heading h2 {
+    margin: 12px 0;
+    color: var(--primary);
+    font-size: clamp(1.8rem, 4vw, 2.7rem);
+    font-weight: 800;
+}
+
+.section-heading p {
+    color: var(--muted);
+    font-size: 1rem;
+}
+/*page à propos*
+
+
+
+/* fin de page*/
+
+/* =====================================
+   4. CARTES DES LANGUES
+===================================== */
+
+.language-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+    max-width: 1250px;
+    margin: 0 auto;
+}
+
+.language-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 35px 28px;
+    min-height: 350px;
+    background-color: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(20, 43, 80, 0.06);
+    overflow: hidden;
+
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+/* Petite ligne decorative */
+
+.language-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background-color: var(--secondary);
+}
+
+.english::before {
+    background-color: #2878C8;
+}
+
+.spanish::before {
+    background-color: #D69B37;
+}
+
+.french::before {
+    background-color: #328B78;
+}
+
+.language-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 15px 35px rgba(20, 43, 80, 0.12);
+}
+
+.card-number {
+    color: #D9E5F2;
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 20px;
+}
+
+.language-label {
+    color: var(--secondary);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+}
+
+.language-card h3 {
+    margin: 12px 0;
+    color: var(--primary);
+    font-size: 1.8rem;
+    font-weight: 800;
+}
+
+.language-card p {
+    margin-bottom: 28px;
+    color: var(--muted);
+    font-size: 0.95rem;
+    line-height: 1.8;
+    flex-grow: 1;
+}
+
+.btn-course {
+    width: 100%;
+    min-height: 48px;
+    padding: 12px 18px;
+    background-color: var(--primary);
+    color: var(--white);
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.btn-course:hover {
+    background-color: var(--secondary);
+}
+
+
+/* =====================================
+   5. PIED DE PAGE
+===================================== */
+
+.footer {
+    background-color: var(--primary);
+    color: var(--white);
+    padding: 55px 7% 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    max-width: 1250px;
+    margin: 0 auto;
+    padding-bottom: 40px;
+}
+
+.footer-brand h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.footer-brand h2 span {
+    color: var(--accent);
+    font-size: 1.2rem;
+}
+
+.footer-brand p {
+    color: #C2D0E0;
+    font-size: 0.9rem;
+}
+
+.footer-links {
+    display: flex;
+    gap: 80px;
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-column h3 {
+    margin-bottom: 8px;
+    font-size: 1rem;
+}
+
+.footer-column a {
+    color: #C2D0E0;
+    font-size: 0.85rem;
+    transition: color 0.3s ease;
+}
+
+.footer-column a:hover {
+    color: var(--white);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-bottom p {
+    color: #C2D0E0;
+    font-size: 0.8rem;
+}
+
+
+/* =====================================
+   6. RESPONSIVE : TABLETTES
+===================================== */
+
+@media screen and (max-width: 900px) {
+
+    .header {
+        padding: 20px 5%;
+    }
+
+    .language-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .language-card:last-child {
+        grid-column: 1 / -1;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 35px;
+    }
+
+    .footer-links {
+        justify-content: flex-start;
+    }
+}
+
+
+/* =====================================
+   7. RESPONSIVE : SMARTPHONES
+===================================== */
+
+@media screen and (max-width: 600px) {
+
+    .header {
+        min-height: auto;
+        padding: 18px 5%;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .logo h1 {
+        font-size: 1.6rem;
+    }
+
+    .logo h1 span {
+        font-size: 1rem;
+    }
+
+    .menu {
+        order: 3;
+        width: 100%;
+    }
+
+    .menu ul {
+        justify-content: center;
+        gap: 35px;
+    }
+
+    .menu a {
+        font-size: 0.85rem;
+    }
+
+    .btn-signin {
+        padding: 9px 16px;
+        font-size: 0.85rem;
+    }
+
+    .languages {
+        padding: 50px 5%;
+    }
+
+    .section-heading {
+        margin-bottom: 35px;
+    }
+
+    .section-heading p {
+        font-size: 0.9rem;
+    }
+
+    .language-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .language-card,
+    .language-card:last-child {
+        grid-column: auto;
+        min-height: 320px;
+        padding: 30px 24px;
+    }
+
+    .language-card h3 {
+        font-size: 1.6rem;
+    }
+
+    .footer {
+        padding: 40px 6% 0;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .footer-brand h2 {
+        font-size: 1.6rem;
+    }
+
+    .footer-bottom p {
+        font-size: 0.75rem;
+    }
+}
+
+
+/* =====================================
+   8. PETITS ECRANS
+===================================== */
+
+@media screen and (max-width: 350px) {
+
+    .header {
+        justify-content: center;
+    }
+
+    .logo,
+    .btn-signin {
+        text-align: center;
+    }
+
+    .menu ul {
+        gap: 20px;
+    }
+
+    .language-card {
+        padding: 25px 18px;
+    }
+}
+
+
+/* =====================================
+   9. ACCESSIBILITE
+===================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}
